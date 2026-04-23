@@ -4,4 +4,5 @@ O Agile Manager é uma ferramenta de terminal criada para facilitar a organizaç
 
 Laís Santos Barbosa;
 Luís Felipe Resende Martini;
-Gabriel Malta Carrara
+Gabriel Malta Carrara;
+Dante Rabelo Ferreira;
