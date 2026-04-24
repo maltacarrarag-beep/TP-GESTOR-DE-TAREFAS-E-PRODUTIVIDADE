@@ -6,3 +6,4 @@ Laís Santos Barbosa;
 Luís Felipe Resende Martini;
 Gabriel Malta Carrara;
 Dante Rabelo Ferreira;
+Eduarda Morrison de Gouvêa.
