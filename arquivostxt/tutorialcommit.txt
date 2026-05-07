@@ -15,4 +15,3 @@ OBS: se o arquivo a crirar estiver numa pasta, é necessário colocar o nome da 
     4.3. dar "git add ."
     4.4. dar "git commit -m "Breve descrição do que foi feito""
     4.5. dar "git push origin main"
-
