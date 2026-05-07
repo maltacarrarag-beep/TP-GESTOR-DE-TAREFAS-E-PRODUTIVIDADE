@@ -1,0 +1,9 @@
+# Ignora arquivos compilados e executaveis
+build/*
+!build/.gitkeep
+*.o
+*.exe
+*.out
+
+# Ignora arquivos do sistema operacional
+.DS_Store
