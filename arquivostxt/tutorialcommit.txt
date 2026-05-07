@@ -9,15 +9,10 @@ OBS: se o arquivo a crirar estiver numa pasta, é necessário colocar o nome da 
 
 3. Para criar uma pasta: "mkdir nome_pasta"
 
-4. Para a realização do commit (APÓS A CRIAÇÃO DO ARQUIVO):
+4. Para a realização do commit (APÓS A CRIAÇÃO/EDIÇÃO DO CÓDIGO):
     4.1. digitar o conteúdo dentro do arquivo
     4.2. salvar esse arquivo (ctrl + s)
-    4.3. dar "git add nome_arquivo"
-    4.4. dar "git commit -m "frase pra commitar""
-    4.5. dar "git push"
-
-    para commitar TUDO o que foi alterado, a lógica é a mesma, mas com algumas alterações:
-    4.6. dar "git add ."
-    4.7. dar "git commit -m "frase pra commitar""
-    4.8. dar "git push origin main"
+    4.3. dar "git add ."
+    4.4. dar "git commit -m "Breve descrição do que foi feito""
+    4.5. dar "git push origin main"
 
