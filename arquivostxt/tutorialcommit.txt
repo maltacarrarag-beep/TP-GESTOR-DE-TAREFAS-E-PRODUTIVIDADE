@@ -16,3 +16,8 @@ OBS: se o arquivo a crirar estiver numa pasta, é necessário colocar o nome da 
     4.4. dar "git commit -m "frase pra commitar""
     4.5. dar "git push"
 
+    para commitar TUDO o que foi alterado, a lógica é a mesma, mas com algumas alterações:
+    4.6. dar "git add ."
+    4.7. dar "git commit -m "frase pra commitar""
+    4.8. dar "git push origin main"
+
