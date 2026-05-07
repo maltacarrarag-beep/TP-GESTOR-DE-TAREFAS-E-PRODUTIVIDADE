@@ -27,8 +27,8 @@
 
  
 class Quadro {
-public:
- 
+
+    public:
  
     // Cria um quadro vazio, sem tarefas nem membros
     // Inicializa o gerador de IDs e cria as colunas padrão do Kanban
@@ -38,13 +38,9 @@ public:
     // delete em cada elemento. Sem isso, ocorre memory leak
     ~Quadro();
  
- 
-
- 
     // Cria uma nova tarefa com os dados fornecidos e a insere na coluna
     // O ID da tarefa é gerado automaticamente (proximoId_)
     // PRECONDIÇÃO: nomeResponsavel deve ser o nome de um membro já cadastrado
-    
 
     // constante para evitar cópias desnecessárias.
     void adicionarTarefa(const std::string& titulo,
@@ -84,9 +80,6 @@ public:
     // 'const' no final não modifica o estado do Quadro
     Tarefa* buscarTarefa(int idTarefa) const;
  
- 
-  
- 
     // Retorna um vetor com ponteiros para todas as tarefas atribuídas ao membro cujo nome é 'nome'. Retorna vetor vazio se não houver nenhuma.
     std::vector<Tarefa*> getTarefasPorMembro(const std::string& nome) const;
  
@@ -96,9 +89,6 @@ public:
     // Retorna um vetor com ponteiros para as tarefas cujo prazo já passou e que ainda não foram concluídas (status != CONCLUIDO)
     std::vector<Tarefa*> getTarefasAtrasadas() const;
  
- 
-   
- 
     // Cria um novo Membro com o nome fornecido e o adiciona ao quadro
     // PRECONDIÇÃO: não deve existir membro com o mesmo nome
     void adicionarMembro(const std::string& nome);
@@ -107,30 +97,18 @@ public:
     // Retorna nullptr se não houver membro com esse nome
     Membro* buscarMembro(const std::string& nome) const;
  
-    
     std::vector<Membro*> getMembros() const;
  
- 
-    
     void exibir() const;
+
  
- 
-private:
- 
-  
- 
+    private:
   
     std::vector<Coluna*> colunas_;
  
-
     std::vector<Membro*> membros_;
  
-
     int proximoId_;
- 
- 
- 
-  
 
     Coluna* buscarColuna(Status status) const;
 };
