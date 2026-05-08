@@ -26,17 +26,6 @@ tarefas ativas)
 
 ## Class Coluna
 ### Responsabilidade:
-• Armazenar nome do membro
-• Controlar carga de trabalho (quantidade de
-tarefas ativas)
-• Indicar se está sobrecarregado (carga > limite)
-### Colaboração:
-• Tarefa
-
----
-
-## Class Coluna
-### Responsabilidade:
 • Representar uma etapa do fluxo (A Fazer, Em
 Andamento, Concluído)
 • Armazenar e gerenciar a lista de tarefas nessa
