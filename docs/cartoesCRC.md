@@ -1,4 +1,4 @@
-# CRC cards - modelagem das classes
+# CARTÕES CRC
 
 ## Class Tarefa
 ### Responsabilidade:
