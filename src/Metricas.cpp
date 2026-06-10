@@ -6,7 +6,7 @@ Metricas::Metricas(Quadro* quadro)
 
 // Carga por membro
 void Metricas::exibirCargaPorMembro() const {
-    std::cout << "\n═══ Carga por Membro ═══\n";
+    std::cout << "\n--- Carga por Membro ---\n";
 
     auto membros = quadro->getMembros();
     if (membros.empty()) {
@@ -25,7 +25,7 @@ void Metricas::exibirCargaPorMembro() const {
 }
 // Tarefas atrasadas
 void Metricas::exibirTarefasAtrasadas() const {
-    std::cout << "\n═══ Tarefas Atrasadas ═══\n";
+    std::cout << "\n--- Tarefas Atrasadas ---\n";
 
     auto atrasadas = quadro->getTarefasAtrasadas();
     if (atrasadas.empty()) {
@@ -40,7 +40,7 @@ void Metricas::exibirTarefasAtrasadas() const {
 
 // Distribuição por coluna
 void Metricas::exibirDistribuicaoPorColuna() const {
-    std::cout << "\n═══ Distribuicao por Coluna ═══\n";
+    std::cout << "\n--- Distribuicao por Coluna ---\n";
 
     auto colunas = quadro->getColunas();
     if (colunas.empty()) {
@@ -62,8 +62,8 @@ void Metricas::exibirDistribuicaoPorColuna() const {
         for (int i = 0; i < padding; i++) std::cout << ' ';
 
         std::cout << "[";
-        for (int i = 0; i < barras;      i++) std::cout << "█";
-        for (int i = barras; i < 20;     i++) std::cout << "░";
+        for (int i = 0; i < barras; i++) std::cout << "#";
+        for (int i = barras; i < 20; i++) std::cout << ".";
         std::cout << "] " << qtd << " tarefa(s)\n";
     }
 
@@ -71,7 +71,7 @@ void Metricas::exibirDistribuicaoPorColuna() const {
 }
 // Membros sobrecarregados
 void Metricas::exibirMembrosSobrecarregados() const {
-    std::cout << "\n═══ Membros Sobrecarregados ═══\n";
+    std::cout << "\n--- Membros Sobrecarregados ---\n";
 
     auto membros = quadro->getMembros();
     bool encontrou = false;
@@ -88,14 +88,14 @@ void Metricas::exibirMembrosSobrecarregados() const {
 }
 // Relatório completo
 void Metricas::exibirRelatorioCompleto() const {
-    std::cout << "\n╔══════════════════════════════════╗\n";
-    std::cout << "║       RELATORIO COMPLETO         ║\n";
-    std::cout << "╚══════════════════════════════════╝\n";
+    std::cout << "\n==================================\n";
+    std::cout << "        RELATORIO COMPLETO\n";
+    std::cout << "==================================\n";
 
     exibirDistribuicaoPorColuna();
     exibirCargaPorMembro();
     exibirMembrosSobrecarregados();
     exibirTarefasAtrasadas();
 
-    std::cout << "\n══════════════════════════════════\n";
+    std::cout << "\n==================================\n";
 }

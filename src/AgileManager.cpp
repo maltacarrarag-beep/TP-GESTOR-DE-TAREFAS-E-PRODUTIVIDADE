@@ -50,9 +50,9 @@ AgileManager::~AgileManager() {
 
 // Loop principal
 void AgileManager::executar() {
-    std::cout << "\n╔══════════════════════════════════╗\n";
-    std::cout << "║      Bem-vindo ao AgileManager   ║\n";
-    std::cout << "╚══════════════════════════════════╝\n";
+    std::cout << "\n==========================================\n";
+    std::cout << "       Bem-vindo ao AgileManager\n";
+    std::cout << "==========================================\n";
 
     int opcao = -1;
     while (opcao != 0) {
@@ -68,19 +68,19 @@ void AgileManager::executar() {
 // Menu principal
 
 void AgileManager::exibirMenu() const {
-    std::cout << "\n┌─────────────────────────────────┐\n";
-    std::cout << "│          MENU PRINCIPAL         │\n";
-    std::cout << "├─────────────────────────────────┤\n";
-    std::cout << "│  1. Visualizar quadro           │\n";
-    std::cout << "│  2. Cadastrar tarefa            │\n";
-    std::cout << "│  3. Mover tarefa                │\n";
-    std::cout << "│  4. Editar tarefa               │\n";
-    std::cout << "│  5. Remover tarefa              │\n";
-    std::cout << "│  6. Filtrar tarefas             │\n";
-    std::cout << "│  7. Gerenciar membros           │\n";
-    std::cout << "│  8. Metricas e relatorios       │\n";
-    std::cout << "│  0. Sair                        │\n";
-    std::cout << "└─────────────────────────────────┘\n";
+    std::cout << "\n----------------------------------\n";
+    std::cout << "          MENU PRINCIPAL\n";
+    std::cout << "----------------------------------\n";
+    std::cout << "  1. Visualizar quadro\n";
+    std::cout << "  2. Cadastrar tarefa\n";
+    std::cout << "  3. Mover tarefa\n";
+    std::cout << "  4. Editar tarefa\n";
+    std::cout << "  5. Remover tarefa\n";
+    std::cout << "  6. Filtrar tarefas\n";
+    std::cout << "  7. Gerenciar membros\n";
+    std::cout << "  8. Metricas e relatorios\n";
+    std::cout << "  0. Sair\n";
+    std::cout << "----------------------------------\n";
 }
 
 void AgileManager::processarOpcao(int opcao) {

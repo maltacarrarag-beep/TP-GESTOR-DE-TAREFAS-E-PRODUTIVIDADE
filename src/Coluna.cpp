@@ -63,17 +63,10 @@ std::vector<Tarefa*> Coluna::getTarefasAtrasadas() const {
  
 // Exibe o cabeçalho da coluna e delega a exibição para cada tarefa
 void Coluna::exibir() const {
-    std::cout << "\n┌─────────────────────────────────┐\n";
-    std::cout << "│  " << nome;
-    // padding para alinhar a borda direita independente do tamanho do nome
-    int padding = 31 - static_cast<int>(nome.size());
-    for (int i = 0; i < padding; i++) std::cout << ' ';
-    std::cout << "│\n";
-    std::cout << "│  Tarefas: " << tarefas.size();
-    padding = 22 - static_cast<int>(std::to_string(tarefas.size()).size());
-    for (int i = 0; i < padding; i++) std::cout << ' ';
-    std::cout << "│\n";
-    std::cout << "└─────────────────────────────────┘\n";
+    std::cout << "\n----------------------------------\n";
+    std::cout << "  " << nome << "\n";
+    std::cout << "  Tarefas: " << tarefas.size() << "\n";
+    std::cout << "----------------------------------\n";
  
     if (tarefas.empty()) {
         std::cout << "  (nenhuma tarefa nesta coluna)\n";
