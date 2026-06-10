@@ -125,8 +125,12 @@ void AgileManager::menuCadastrarTarefa() {
         return;
     }
 
-    quadro->adicionarTarefa(titulo, descricao, prazo, prioridade, responsavel);
-    std::cout << "  [OK] Tarefa cadastrada com sucesso.\n";
+    try {
+        quadro->adicionarTarefa(titulo, descricao, prazo, prioridade, responsavel);
+        std::cout << "  [OK] Tarefa cadastrada com sucesso.\n";
+    } catch (const std::invalid_argument& e) {
+        std::cout << "  [!] Erro ao cadastrar: " << e.what() << "\n";
+    }
 }
 // 3. Mover tarefa
 void AgileManager::menuMoverTarefa() {
@@ -206,11 +210,15 @@ void AgileManager::menuEditarTarefa() {
         novoResponsavel = t->getResponsavel();
     }
 
-    if (quadro->editarTarefa(id, novoTitulo, novaDescricao,
-                              novoPrazo, novaPrioridade, novoResponsavel))
-        std::cout << "  [OK] Tarefa atualizada.\n";
-    else
-        std::cout << "  [!] Erro ao atualizar tarefa.\n";
+    try {
+        if (quadro->editarTarefa(id, novoTitulo, novaDescricao,
+                                novoPrazo, novaPrioridade, novoResponsavel))
+            std::cout << "  [OK] Tarefa atualizada.\n";
+        else
+            std::cout << "  [!] Erro ao atualizar tarefa.\n";
+    } catch (const std::invalid_argument& e) {
+        std::cout << "  [!] Erro ao editar: " << e.what() << "\n";
+    }
 }
 // 5. Remover tarefa
 void AgileManager::menuRemoverTarefa() {
