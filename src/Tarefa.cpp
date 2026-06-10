@@ -1,4 +1,4 @@
-#include "../include/Tarefa.h"
+#include "Tarefa.h"
 #include <iostream>
 #include <stdexcept>
 
