@@ -99,7 +99,7 @@ void AgileManager::processarOpcao(int opcao) {
 }
 // 2. Cadastrar tarefa
 void AgileManager::menuCadastrarTarefa() {
-    std::cout << "\n── Cadastrar Nova Tarefa ──\n";
+    std::cout << "\n--- Cadastrar Nova Tarefa ---\n";
 
     std::string titulo      = lerLinha("  Titulo: ");
     std::string descricao   = lerLinha("  Descricao: ");
@@ -134,7 +134,7 @@ void AgileManager::menuCadastrarTarefa() {
 }
 // 3. Mover tarefa
 void AgileManager::menuMoverTarefa() {
-    std::cout << "\n── Mover Tarefa ──\n";
+    std::cout << "\n--- Mover Tarefa ---\n";
     quadro->exibir();
 
     int id = lerInteiro("  ID da tarefa: ");
@@ -170,7 +170,7 @@ void AgileManager::menuMoverTarefa() {
 
 // 4. Editar tarefa
 void AgileManager::menuEditarTarefa() {
-    std::cout << "\n── Editar Tarefa ──\n";
+    std::cout << "\n--- Editar Tarefa ---\n";
     quadro->exibir();
 
     int id = lerInteiro("  ID da tarefa a editar: ");
@@ -222,7 +222,7 @@ void AgileManager::menuEditarTarefa() {
 }
 // 5. Remover tarefa
 void AgileManager::menuRemoverTarefa() {
-    std::cout << "\n── Remover Tarefa ──\n";
+    std::cout << "\n--- Remover Tarefa ---\n";
     quadro->exibir();
 
     int id = lerInteiro("  ID da tarefa a remover: ");
@@ -248,7 +248,7 @@ void AgileManager::menuRemoverTarefa() {
 }
 // 6. Filtrar tarefas
 void AgileManager::menuFiltrarTarefas() {
-    std::cout << "\n── Filtrar Tarefas ──\n";
+    std::cout << "\n--- Filtrar Tarefas ---\n";
     std::cout << "  1. Por prioridade\n";
     std::cout << "  2. Por membro responsavel\n";
     std::cout << "  3. Tarefas atrasadas\n";
@@ -294,7 +294,7 @@ void AgileManager::menuFiltrarTarefas() {
 }
 // 7. Gerenciar membros
 void AgileManager::menuGerenciarMembros() {
-    std::cout << "\n── Gerenciar Membros ──\n";
+    std::cout << "\n--- Gerenciar Membros ---\n";  
     std::cout << "  1. Adicionar membro\n";
     std::cout << "  2. Listar membros\n";
 
@@ -331,7 +331,7 @@ void AgileManager::menuGerenciarMembros() {
 }
 // 8. Métricas e relatórios
 void AgileManager::menuVisualizarMetricas() {
-    std::cout << "\n── Metricas e Relatorios ──\n";
+    std::cout << "\n--- Metricas e Relatorios ---\n";
     std::cout << "  1. Carga por membro\n";
     std::cout << "  2. Tarefas atrasadas\n";
     std::cout << "  3. Distribuicao por coluna\n";
