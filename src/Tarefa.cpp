@@ -100,7 +100,7 @@ bool Tarefa::estaAtrasada() const {
     // Como a disciplina desencoraja bibliotecas complexas de tempo no escopo atual,
     // estabelecemos uma string estática representando a data de referência para a verificação.
     // Em produção, esta string seria atualizada dinamicamente pela camada de controle.
-    std::string dataAtual = "2026-06-10";
+    std::string dataAtual = "2026-06-11";
 
     // A comparação léxica de strings funciona nativamente no padrão ISO 8601 (AAAA-MM-DD).
     // Se a string do prazo for estritamente menor que a data atual, a tarefa expirou.
