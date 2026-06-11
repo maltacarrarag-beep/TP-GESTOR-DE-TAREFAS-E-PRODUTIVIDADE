@@ -10,10 +10,10 @@ Tarefa::Tarefa(int id, const std::string& titulo,
     
     // Programação Defensiva: Validação de strings vazias para evitar estados inconsistentes
     if (titulo.empty()) {
-        throw std::invalid_argument("Erro: O título da tarefa não pode ser vazio.");
+        throw std::invalid_argument("Erro: O titulo da tarefa nao pode ser vazio.");
     }
     if (responsavel.empty()) {
-        throw std::invalid_argument("Erro: O responsável pela tarefa deve ser especificado.");
+        throw std::invalid_argument("Erro: O responsavel pela tarefa deve ser especificado.");
     }
     
     // Validação preliminar do tamanho do prazo (formato esperado: AAAA-MM-DD)
@@ -59,7 +59,7 @@ Status Tarefa::getStatus() const {
 // Implementação dos Métodos Mutadores (Setters) com Barreiras de Proteção
 void Tarefa::setTitulo(const std::string& novoTitulo) {
     if (novoTitulo.empty()) {
-        throw std::invalid_argument("Erro: O título da tarefa não pode ser modificado para vazio.");
+        throw std::invalid_argument("Erro: O titulo da tarefa nao pode ser modificado para vazio.");
     }
     titulo = novoTitulo;
 }
@@ -81,7 +81,7 @@ void Tarefa::setPrioridade(Prioridade novaPrioridade) {
 
 void Tarefa::setResponsavel(const std::string& novoResponsavel) {
     if (novoResponsavel.empty()) {
-        throw std::invalid_argument("Erro: O responsável não pode ser modificado para um campo vazio.");
+        throw std::invalid_argument("Erro: O responsavel nao pode ser modificado para um campo vazio.");
     }
     responsavel = novoResponsavel;
 }
@@ -111,7 +111,7 @@ bool Tarefa::estaAtrasada() const {
 std::string Tarefa::prioridadeToString() const {
     switch (prioridade) {
         case Prioridade::ALTA:  return "Alta";
-        case Prioridade::MEDIA: return "Média";
+        case Prioridade::MEDIA: return "Media";
         case Prioridade::BAIXA: return "Baixa";
         default:                return "Desconhecida";
     }
@@ -121,7 +121,7 @@ std::string Tarefa::statusToString() const {
     switch (status) {
         case Status::A_FAZER:      return "A Fazer";
         case Status::EM_ANDAMENTO: return "Em Andamento";
-        case Status::CONCLUIDO:    return "Concluído";
+        case Status::CONCLUIDO:    return "Concluido";
         default:                   return "Desconhecido";
     }
 }
@@ -130,15 +130,15 @@ std::string Tarefa::statusToString() const {
 void Tarefa::exibir() const {
     std::cout << "==================================================\n";
     std::cout << "ID da Tarefa:  " << id << "\n";
-    std::cout << "Título:        " << titulo << "\n";
-    std::cout << "Descrição:     " << descricao << "\n";
+    std::cout << "Titulo:        " << titulo << "\n";
+    std::cout << "Descricao:     " << descricao << "\n";
     std::cout << "Prazo:         " << prazo;
     if (estaAtrasada()) {
         std::cout << " [ATRASADA]";
     }
     std::cout << "\n";
     std::cout << "Prioridade:    " << prioridadeToString() << "\n";
-    std::cout << "Responsável:   " << responsavel << "\n";
+    std::cout << "Responsavel:   " << responsavel << "\n";
     std::cout << "Status Atual:  " << statusToString() << "\n";
     std::cout << "==================================================" << std::endl;
 }
