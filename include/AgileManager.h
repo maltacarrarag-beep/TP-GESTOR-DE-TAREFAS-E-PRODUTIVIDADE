@@ -4,38 +4,67 @@
 #include "Quadro.h"
 #include "Metricas.h"
 
-
- //Classe AgileManager
- // Atua como a interface principal (Controller) que gerencia o fluxo do aplicativo,
- //unindo a gestao das tarefas (Quadro) com a analise de dados (Metricas).
- 
+/**
+ * @brief Controller principal do sistema AgileManager.
+ *
+ * Atua como a interface principal que gerencia o fluxo do aplicativo,
+ * unindo a gestao das tarefas (Quadro) com a analise de dados (Metricas).
+ * Contem o loop principal do programa e todos os submenus de interacao
+ * com o usuario via terminal.
+ */
 class AgileManager {
 public:
+
+    /**
+     * @brief Constrói o AgileManager, inicializando o Quadro e as Metricas.
+     */
     AgileManager();
 
+    /**
+     * @brief Destroi o AgileManager e libera os objetos Quadro e Metricas.
+     */
     ~AgileManager();
 
-    // Inicia o loop principal do programa (o menu que fica rodando ate o usuario sair)
+    /**
+     * @brief Inicia o loop principal do programa.
+     * @details Exibe o menu e processa as escolhas do usuario ate que
+     *          a opcao de saida (0) seja selecionada.
+     */
     void executar();
 
 private:
-    Quadro* quadro;     // Ponteiro para o banco de dados das tarefas e colunas
-    Metricas* metricas; // Ponteiro para o motor de analise estatistica
+    Quadro*   quadro;   ///< Ponteiro para o banco de dados das tarefas e colunas.
+    Metricas* metricas; ///< Ponteiro para o motor de analise estatistica.
 
-    // Funcoes auxiliares de Interface (Menu)
-    void exibirMenu() const;        // Apenas imprime as opcoes no terminal
-    void processarOpcao(int opcao); // Direciona a escolha do usuario para a funcao correta
+    /// @brief Imprime as opcoes do menu principal no terminal.
+    void exibirMenu() const;
 
-    // Submenus de Gerenciamento de Tarefas 
-    void menuCadastrarTarefa();     // Captura dados para criar nova tarefa
-    void menuMoverTarefa();         // Altera a coluna de uma tarefa (ex: To Do -> Doing)
-    void menuEditarTarefa();        // Modifica descricao, prioridade ou prazos
-    void menuRemoverTarefa();       // Exclui uma tarefa do quadro
-    void menuFiltrarTarefas();      // Busca tarefas por prioridade, membro ou data
+    /**
+     * @brief Direciona a escolha do usuario para a funcao correspondente.
+     * @param opcao Numero da opcao selecionada pelo usuario.
+     */
+    void processarOpcao(int opcao);
 
-    // Submenus de Gestao de Equipe e Analise
-    void menuGerenciarMembros();    // Adiciona ou remove pessoas do projeto
-    void menuVisualizarMetricas();  // Chama as funcoes da classe Metricas para exibir relatorios
+    /// @brief Captura os dados necessarios e cadastra uma nova tarefa no quadro.
+    void menuCadastrarTarefa();
+
+    /// @brief Solicita o ID e o novo status para mover uma tarefa entre colunas.
+    void menuMoverTarefa();
+
+    /// @brief Solicita o ID e os novos dados para editar uma tarefa existente.
+    void menuEditarTarefa();
+
+    /// @brief Solicita o ID e confirma a remocao de uma tarefa do quadro.
+    void menuRemoverTarefa();
+
+    /// @brief Exibe submenu para filtrar tarefas por prioridade, membro ou atraso.
+    void menuFiltrarTarefas();
+
+    /// @brief Exibe submenu para adicionar ou listar membros da equipe.
+    void menuGerenciarMembros();
+
+    /// @brief Exibe submenu com as opcoes de metricas e relatorios.
+    void menuVisualizarMetricas();
 };
 
 #endif

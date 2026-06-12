@@ -1,34 +1,58 @@
-#ifndef METRICAS_H // Proteção contra inclusão duplicada (Header Guard)
+#ifndef METRICAS_H
 #define METRICAS_H
 
 #include "Quadro.h"
 
-
-  //Classe Metricas
- // Responsavel por gerar analises estatisticas e relatorios sobre o estado do Quadro.
-
+/**
+ * @brief Motor de analise estatistica do quadro Kanban.
+ *
+ * Responsavel por gerar relatorios e metricas sobre o estado atual do Quadro.
+ * Nao modifica nenhum dado — apenas le e processa as informacoes existentes.
+ */
 class Metricas {
 public:
-    // Construtor: Recebe um ponteiro para o Quadro que sera analisado
+
+    /**
+     * @brief Constrói o objeto Metricas vinculado a um Quadro.
+     * @param quadro Ponteiro para o quadro que sera analisado.
+     */
     Metricas(Quadro* quadro);
 
-    // Calcula e mostra quantas tarefas ou pontos de esforco cada membro da equipe possui
+    /**
+     * @brief Exibe a carga de trabalho de cada membro da equipe.
+     * @details Mostra o numero de tarefas e a carga atual de cada membro,
+     *          sinalizando os que estao sobrecarregados.
+     */
     void exibirCargaPorMembro() const;
 
-    // Lista todas as tarefas que passaram do prazo (deadline) definido
+    /**
+     * @brief Lista todas as tarefas que ultrapassaram o prazo definido.
+     * @details Tarefas com status CONCLUIDO nao sao incluidas no relatorio.
+     */
     void exibirTarefasAtrasadas() const;
 
-    // Mostra o total de tarefas em cada coluna (ex: To Do, Doing, Done) para medir o fluxo
+    /**
+     * @brief Exibe a distribuicao de tarefas por coluna com barra de progresso.
+     * @details Mostra o total de tarefas em cada coluna de forma proporcional.
+     */
     void exibirDistribuicaoPorColuna() const;
 
-    // Identifica membros que possuem mais tarefas do que um limite definido
+    /**
+     * @brief Lista os membros que ultrapassaram o limite de carga.
+     * @see Membro::estaSobrecarregado()
+     */
     void exibirMembrosSobrecarregados() const;
 
-    // Consolida todas as metricas acima em um unico relatorio geral no console
+    /**
+     * @brief Gera um relatorio completo consolidando todas as metricas.
+     * @details Chama em sequencia: exibirDistribuicaoPorColuna,
+     *          exibirCargaPorMembro, exibirMembrosSobrecarregados
+     *          e exibirTarefasAtrasadas.
+     */
     void exibirRelatorioCompleto() const;
 
 private:
-    Quadro* quadro; // Ponteiro para o objeto Quadro que contem os dados a serem processados
+    Quadro* quadro; ///< Ponteiro para o quadro que contem os dados analisados.
 };
 
-#endif 
+#endif
