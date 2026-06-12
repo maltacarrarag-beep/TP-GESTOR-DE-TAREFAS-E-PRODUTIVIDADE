@@ -167,15 +167,14 @@ AgileManager.cpp (lerInteiro): loop com `cin.clear()` ate entrada valida
 
 ## Documentacao (Doxygen)
 
-O Doxygen nao foi configurado neste projeto durante o ciclo de desenvolvimento.
-O arquivo `Doxyfile` esta presente na raiz e ja foi configurado com os caminhos do projeto.
-Caso queira gerar a documentacao, basta ter o Doxygen instalado e rodar na raiz:
+O projeto foi documentado com o Doxygen com os comentarios nos arquivos (`include/`).
+Para gerar,tem que ter o Doxygen instalado e rodar na raiz:
 
 ```bash
 doxygen Doxyfile
 ```
 
-A documentacao HTML sera gerada em `docs/html/index.html`.
+A documentacao HTML é acessada com `docs/html/index.html`.
 
 ---
 
